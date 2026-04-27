@@ -1,0 +1,35 @@
+------**********Dataproc Serverless is used to create batch pipelines that extract data from Google Cloud Storage (GCS) and load it into the Bronze layer***************------
+
+
+**************Steps To Create Batches in GCP********************:
+
+Create a scripts folder in the GCS bucket and upload the PySpark code files from the dataproc_scripts directory into it.
+
+
+--------------Here are 3 clear steps describing what is done in the given code------------:
+
+
+Initialize Spark Session-
+A Spark session is created using Dataproc Serverless to run the ETL process for ingesting hospital data into the Bronze layer.
+
+
+Read CSV Data from GCS-
+CSV files for both Hospital A and Hospital B (patients, providers, departments, transactions, and encounters) and claims are read from Google Cloud Storage using Spark.
+
+
+Load Data into BigQuery Bronze Tables-
+The ingested data is written into corresponding BigQuery Bronze dataset tables using overwrite mode, with a temporary GCS bucket used for staging.
+
+
+✅ Outcome: Raw hospital data from GCS is successfully ingested into the Bronze layer in BigQuery.
+
+
+**____Run this code in Google Cloud Shell to create the Dataproc Serverless batch:____**
+
+
+gcloud dataproc batches submit pyspark \
+gs://hospital-rcm-landing//bronze_layer_code.py \
+--batch=bronze-etl1-job \ 
+--region=us-central1 \
+--subnet=projects/hospital-project1-494408/regions/us-central1/subnetworks/default
+
