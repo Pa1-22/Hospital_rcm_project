@@ -4,8 +4,13 @@ from pyspark.sql.functions import current_timestamp
 # =============================================
 # Spark Session
 # =============================================
-
-spark = SparkSession.builder \
+#==========================================
+#spark reay command
+#===============================
+#=======================
+#patients data to be saved
+#=========================
+spark = SparkSession.builder 
     .appName("hospital_claims_bronze_etl") \
     .getOrCreate()
 
