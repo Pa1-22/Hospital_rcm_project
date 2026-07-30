@@ -1,4 +1,4 @@
-## 📊 Healthcare RCM Data Lake on GCP
+## 📊 Healthcare RCM Data Lake on GCP-----------------
 
 This project demonstrates an end-to-end data engineering solution for building a scalable Data Lake on Google Cloud Platform (GCP) focused on Revenue Cycle Management (RCM) in the healthcare domain.
 
